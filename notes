@@ -1,3 +1,7 @@
 here we have also used a npm morgan package for logging mechanism
 for our booking model we have flightid because a booking will be pointing to a flight and userid because a booking will
 be belonging to an user
+
+to modify an existing model we can run this command npx sequelize migration:create --name modify_bookings_add_new_fields,
+this will create just a migration and there we can add the fields we need to add to our existing model and do a db migrate,
+we need to add those same fields in the old model js file also
