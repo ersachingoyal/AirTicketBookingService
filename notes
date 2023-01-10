@@ -5,3 +5,11 @@ be belonging to an user
 to modify an existing model we can run this command npx sequelize migration:create --name modify_bookings_add_new_fields,
 this will create just a migration and there we can add the fields we need to add to our existing model and do a db migrate,
 we need to add those same fields in the old model js file also
+
+
+we will make call to reminder service from here to send the mails, but the mail sending is not urgent, so we need not to send the mails
+immediately , so we will send a msg queue in between both of these , booking service will publish a msg to the queue and reminder service
+will subscribe to the msg whenver its up and having the bandwith
+
+for this we will use rabbitmq - we need to install this from there site and to connect rabbitmq with node we will
+use amqplib -> npm i amqplib
